@@ -1,4 +1,4 @@
-from PySide6 import QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 import pygame
 import sys
 
@@ -7,26 +7,27 @@ import sys
 WIDTH = 360
 HEIGHT = 480
 FPS = 30
-
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
+
+
 # NOTE: I think its better to put the QT6 thing here, before initialising pygame, lets see
 class ImageWidget(QtWidgets.QWidget):
-    def __init__(self, surface, parent=None) -> None:
-        super(ImageWidget, self).__init__(parent)
-        width = surface.get_width()
-        height = surface.get_height()
-        self.data = surface.get_buffer().raw
-        self.image =QtGui.QImage(self.data, width, height, QtGui.QImage.Format.Format_RGB32) 
+    def __init__(self, screen_surface, parent=None) -> None:
+        super(ImageWidget, self).__init__(parent) 
+        width = screen_surface.get_width()
+        height = screen_surface.get_height()
+        self.setFixedSize(self.width(), self.height())
+        self.data=screen_surface.get_buffer().raw
+        self.image=QtGui.QImage(self.data,width, height,QtGui.QImage.Format.Format_ARGB32)
 
     def paintEvent(self, event) -> None:
-        qp = QtGui.QPainter()
-        qp.begin(self)
-        qp.drawImage(0,0,self.image)
+        qp = QtGui.QPainter(self) 
+        qp.drawImage(0, 0, self.image)
         qp.end()
 
 
@@ -34,10 +35,19 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, surface, parent=None) -> None:
         super(MainWindow, self).__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.game_step)
+        self.timer.start(1000 // FPS)
+
+    def game_step(self):
+        all_sprites.update()
+        all_sprites.draw(SCREEN)
+        self.centralWidget().update()
+
 
 pygame.init()
-
-
+SCREEN = pygame.surface.Surface((WIDTH, HEIGHT))
+SCREEN.fill(BLACK)
 class Mate(pygame.sprite.Sprite):
     def __init__(self) -> None:
         super().__init__()
@@ -57,20 +67,10 @@ all_sprites = pygame.sprite.Group()
 mate = Mate()
 all_sprites.add(mate)
 app = QtWidgets.QApplication(sys.argv)
-window = pygame.display.set_mode((WIDTH, HEIGHT))
-using_surface = MainWindow(window)
-pygame.display.set_caption("Deskmate made by EskimoGabe")
-clock = pygame.time.Clock()
+using_surface = MainWindow(SCREEN)
+using_surface.show()
+using_surface.setWindowTitle("Deskmate made by EskimoGabe")
+
 
 if __name__ == "__main__":
-    while True:
-        all_sprites.update()
-        clock.tick(FPS)
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-        window.fill(BLACK)
-        all_sprites.draw(window) 
-        using_surface.show()
-        app.exec()
+    app.exec()
