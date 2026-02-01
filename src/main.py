@@ -4,8 +4,8 @@ import sys
 
 # NOTE: constants, will put them into their own file
 # NOTE: for width and height I will use a library to get the screen width and height
-WIDTH = 360
-HEIGHT = 480
+WIDTH = 1336
+HEIGHT = 768
 FPS = 30
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -20,19 +20,21 @@ SCREEN = pygame.surface.Surface((WIDTH, HEIGHT))
 
 class ImageWidget(QtWidgets.QWidget):
     def __init__(self, surface, parent=None) -> None:
-        super(ImageWidget, self).__init__(parent)
-        width = surface.get_width()
-        height = surface.get_height()
-        self.data = surface.get_buffer().raw
-        self.image = QtGui.QImage(
-            self.data, width, height, QtGui.QImage.Format.Format_RGB32
-        )
+        super().__init__(parent)
+        self.surface = surface
+        self._update_qimage()
+
+    def _update_qimage(self):
+        width = self.surface.get_width()
+        height = self.surface.get_height()
+        self.data = self.surface.get_buffer().raw
+        self.image = QtGui.QImage(self.data, width, height, QtGui.QImage.Format.Format_RGB32)
 
     def paintEvent(self, event):
-        qp = QtGui.QPainter()
-        qp.begin(self)
+        self._update_qimage()
+        qp = QtGui.QPainter(self)    
         qp.drawImage(0, 0, self.image)
-        qp.end()
+        
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -44,6 +46,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.start(1000 // 30)
 
     def game_step(self):
+        SCREEN.fill(BLACK)
         all_sprites.update()
         all_sprites.draw(SCREEN)
         self.centralWidget().update()
