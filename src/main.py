@@ -13,7 +13,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 SCREEN = pygame.surface.Surface((WIDTH, HEIGHT))
-
+TRANSPARENT = (255,255,255,0)
 # NOTE: I think its better to put the QT6 thing here, before initialising pygame, lets see
 # this is the one that works
 
@@ -28,7 +28,7 @@ class ImageWidget(QtWidgets.QWidget):
         width = self.surface.get_width()
         height = self.surface.get_height()
         self.data = self.surface.get_buffer().raw
-        self.image = QtGui.QImage(self.data, width, height, QtGui.QImage.Format.Format_RGB32)
+        self.image = QtGui.QImage(self.data, width, height, QtGui.QImage.Format.Format_ARGB32_Premultiplied)
 
     def paintEvent(self, event):
         self._update_qimage()
@@ -46,7 +46,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.start(1000 // 30)
 
     def game_step(self):
-        SCREEN.fill(BLACK)
+        SCREEN.fill(TRANSPARENT)
         all_sprites.update()
         all_sprites.draw(SCREEN)
         self.centralWidget().update()
@@ -73,11 +73,13 @@ class Mate(pygame.sprite.Sprite):
 mate = Mate()
 all_sprites = pygame.sprite.Group()
 all_sprites.add(mate)
-SCREEN.fill((BLACK))
+SCREEN.fill((TRANSPARENT))
 all_sprites.draw(SCREEN)
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow(SCREEN)
+window.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+window.setStyleSheet("background-color: rgba(255,255,255,0);")
 window.show()
 if __name__ == "__main__":
     app.exec()
