@@ -12,8 +12,8 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
-SCREEN = pygame.surface.Surface((WIDTH, HEIGHT))
-TRANSPARENT = (255,255,255,0)
+SCREEN = pygame.surface.Surface((WIDTH, HEIGHT), pygame.SRCALPHA, 32)
+TRANSPARENT = (255, 255, 255, 0)
 # NOTE: I think its better to put the QT6 thing here, before initialising pygame, lets see
 # this is the one that works
 
@@ -28,13 +28,14 @@ class ImageWidget(QtWidgets.QWidget):
         width = self.surface.get_width()
         height = self.surface.get_height()
         self.data = self.surface.get_buffer().raw
-        self.image = QtGui.QImage(self.data, width, height, QtGui.QImage.Format.Format_ARGB32_Premultiplied)
+        self.image = QtGui.QImage(
+            self.data, width, height, QtGui.QImage.Format.Format_ARGB32
+        )
 
     def paintEvent(self, event):
         self._update_qimage()
-        qp = QtGui.QPainter(self)    
+        qp = QtGui.QPainter(self)
         qp.drawImage(0, 0, self.image)
-        
 
 
 class MainWindow(QtWidgets.QMainWindow):
