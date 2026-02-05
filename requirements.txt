@@ -1,2 +1,5 @@
 pygame==2.6.1
-screeninfo==0.8.1
+pyside6==6.10.1
+pyside6-addons==6.10.1
+pyside6-essentials==6.10.1
+shiboken6==6.10.1
