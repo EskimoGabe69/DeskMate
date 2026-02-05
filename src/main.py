@@ -79,8 +79,9 @@ all_sprites.draw(SCREEN)
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow(SCREEN)
+window.setWindowTitle("Deskmate by EskimoGabe")
 window.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 window.setStyleSheet("background-color: rgba(255,255,255,0);")
-window.show()
+window.showMaximized()
 if __name__ == "__main__":
     app.exec()
