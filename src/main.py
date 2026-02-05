@@ -42,6 +42,10 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, surface, parent=None) -> None:
         super(MainWindow, self).__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
+        self.setWindowTitle("Deskmate by EskimoGabe")
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.setStyleSheet("background-color: rgba(255,255,255,0);")
+        self.show()
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.game_step)
         self.timer.start(1000 // 30)
@@ -79,9 +83,5 @@ all_sprites.draw(SCREEN)
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow(SCREEN)
-window.setWindowTitle("Deskmate by EskimoGabe")
-window.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-window.setStyleSheet("background-color: rgba(255,255,255,0);")
-window.showMaximized()
 if __name__ == "__main__":
     app.exec()
