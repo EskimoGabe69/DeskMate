@@ -36,6 +36,7 @@ class ImageWidget(QtWidgets.QWidget):
         self._update_qimage()
         qp = QtGui.QPainter(self)
         qp.drawImage(0, 0, self.image)
+        qp.end()
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -43,12 +44,11 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
         self.setWindowTitle("Deskmate by EskimoGabe")
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
-        self.setAttribute(QtCore.Qt.WA_OpaquePaintEvent, False)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setWindowFlags(
             QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint
         )
-        self.show()
+        self.showMaximized()
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.game_step)
         self.timer.start(1000 // 30)
