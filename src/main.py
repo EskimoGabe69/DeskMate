@@ -86,5 +86,12 @@ all_sprites.draw(SCREEN)
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow(SCREEN)
+pixmap = QtGui.QPixmap("./assets/first_logo.png")
+scaled_pixmap = pixmap.scaled(32,32)
+icon = QtGui.QIcon(scaled_pixmap)
+tray = QtWidgets.QSystemTrayIcon(icon, app)
+tray.setToolTip("Deskmate by EskimoGabe")
+tray.show()
+
 if __name__ == "__main__":
     app.exec()
