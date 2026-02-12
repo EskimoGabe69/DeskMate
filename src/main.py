@@ -85,13 +85,20 @@ SCREEN.fill((TRANSPARENT))
 all_sprites.draw(SCREEN)
 
 app = QtWidgets.QApplication(sys.argv)
+app.setQuitOnLastWindowClosed(False)
 window = MainWindow(SCREEN)
 pixmap = QtGui.QPixmap("./assets/first_logo.png")
-scaled_pixmap = pixmap.scaled(32,32)
+scaled_pixmap = pixmap.scaled(32, 32)
 icon = QtGui.QIcon(scaled_pixmap)
 tray = QtWidgets.QSystemTrayIcon(icon, app)
 tray.setToolTip("Deskmate by EskimoGabe")
 tray.show()
+
+menu = QtWidgets.QMenu()
+exit_action = QtGui.QAction("Quit", app)
+exit_action.triggered.connect(app.quit)
+menu.addAction(exit_action)
+tray.setContextMenu(menu)
 
 if __name__ == "__main__":
     app.exec()
