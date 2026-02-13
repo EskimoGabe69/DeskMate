@@ -1,11 +1,15 @@
 from PySide6 import QtCore, QtGui, QtWidgets
 import pygame
 import sys
+from screeninfo import get_monitors
 
 # NOTE: constants, will put them into their own file
-# NOTE: for width and height I will use a library to get the screen width and height
-WIDTH = 1336
-HEIGHT = 768
+
+monitors = get_monitors()
+first_monitor = monitors[0]
+
+WIDTH = first_monitor.width
+HEIGHT = first_monitor.height
 FPS = 30
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
