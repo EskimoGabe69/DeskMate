@@ -2,13 +2,14 @@ from PySide6 import QtCore, QtGui, QtWidgets
 import pygame
 import sys
 import core.constants as constants
-import components.imagewidget as imagewidget
+from components.imagewidget import ImageWidget
+from components.mate import Mate
 
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, surface, parent=None) -> None:
         super(MainWindow, self).__init__(parent)
-        self.setCentralWidget(imagewidget.ImageWidget(surface))
+        self.setCentralWidget(ImageWidget(surface))
         self.setWindowTitle("Deskmate by EskimoGabe")
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setWindowFlags(
@@ -29,19 +30,6 @@ class MainWindow(QtWidgets.QMainWindow):
 pygame.init()
 
 
-class Mate(pygame.sprite.Sprite):
-    def __init__(self) -> None:
-        super().__init__()
-        self.image = pygame.Surface((50, 50))
-        self.image.fill((constants.RED))
-        self.rect = self.image.get_rect()
-        self.rect.center = (constants.WIDTH // 2, constants.HEIGHT // 2)
-        self.vx = 2
-
-    def update(self) -> None:
-        self.rect.x += self.vx
-        if self.rect.right > constants.WIDTH or self.rect.left < 0:
-            self.vx *= -1
 
 
 mate = Mate()
@@ -56,6 +44,7 @@ window = MainWindow(constants.SCREEN)
 pixmap = QtGui.QPixmap("./assets/first_logo.png")
 scaled_pixmap = pixmap.scaled(32, 32)
 icon = QtGui.QIcon(scaled_pixmap)
+window.setWindowIcon(icon)
 tray = QtWidgets.QSystemTrayIcon(icon, app)
 tray.setToolTip("Deskmate by EskimoGabe")
 tray.show()
