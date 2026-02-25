@@ -4,14 +4,21 @@ import core.constants as constants
 from PySide6 import QtGui, QtWidgets
 from components.mainwindow import MainWindow
 import sys
+import os
+
+
+pygame.init()
+pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
+game_directory = os.path.dirname(__file__)
+parent_directory = os.path.abspath(os.path.join(game_directory, ".."))
+asset_directory = os.path.join(parent_directory, "assets")
+image_file = pygame.image.load(
+    os.path.join(asset_directory, "Doggo.png")
+).convert()
 
 
 def app(icon_path):
-    pygame.init()
-
-    mate = Mate()
-
-    mate = Mate()
+    mate = Mate(image_file)
     all_sprites = pygame.sprite.Group()
     all_sprites.add(mate)
     constants.SCREEN.fill((constants.TRANSPARENT))
@@ -32,6 +39,6 @@ def app(icon_path):
     exit_action.triggered.connect(app.quit)
     menu.addAction(exit_action)
     tray.setContextMenu(menu)
-    print("Setup complete")
+    print("Setup complete") 
     window.show()
     sys.exit(app.exec())
