@@ -6,7 +6,7 @@ class Mate(pygame.sprite.Sprite):
     def __init__(self, mate_image) -> None:
         super().__init__()
         self.mate_image = mate_image
-        self.image = pygame.Surface((50, 50))
+        self.image = pygame.Surface((50, 50), pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.image.blit(self.mate_image, (0, 0))
         self.rect.center = (constants.WIDTH // 2, constants.HEIGHT // 2)

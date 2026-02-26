@@ -3,12 +3,11 @@ import core.constants as constants
 from PySide6 import QtWidgets, QtCore
 
 
-# NOTE: gotta fix dependencies
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, all_sprites, surface, parent=None) -> None:
         super(MainWindow, self).__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
-        self.setWindowTitle("Deskmate by EskimoGabe")
+        self.setWindowTitle(constants.CAPTION)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setWindowFlags(
             QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint
@@ -19,7 +18,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.start(1000 // 30)
         self.all_sprites = all_sprites
 
-    def game_step(self):
+    def game_step(self): 
         constants.SCREEN.fill(constants.TRANSPARENT)
         self.all_sprites.update()
         self.all_sprites.draw(constants.SCREEN)
