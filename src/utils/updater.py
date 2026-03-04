@@ -1,40 +1,8 @@
 import subprocess
 import shlex
+from utils.update_available import update_available
 
-fetch_command = "git fetch"
-pull_command = "git pull origin"
-log_command = "git log HEAD..origin/HEAD --oneline"
-
-
-# NOTE: might refactor this code and well split into different files
-
-
-def update_available(repo_path: str = ".") -> bool:
-    """
-    This function, using git, checks if an update is available.
-    """
-    try:
-        print("Checking update")
-        split_command = shlex.split(fetch_command)
-        subprocess.run(
-            split_command,
-            cwd=repo_path,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        split_log = shlex.split(log_command)
-        result = subprocess.run(
-            split_log,
-            cwd=repo_path,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-        )
-        return bool(result.stdout.strip())
-    except subprocess.CalledProcessError:
-        return False
+pull_command = "git pull origin dev-branch"
 
 
 def updater():
@@ -47,7 +15,7 @@ def updater():
         subprocess.run(
             split_pull_command,
             check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
         )
         print("Updated!")
+    else:
+        print("No Update available!")
