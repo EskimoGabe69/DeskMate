@@ -14,10 +14,7 @@ asset_directory = os.path.join(parent_directory, "assets")
 
 
 def app(icon_path):
-    pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
-    image_file = pygame.image.load(
-        os.path.join(asset_directory, "Doggo.png")
-    ).convert_alpha()
+    image_file = pygame.image.load(os.path.join(asset_directory, "Doggo.png"))
     mate = Mate(image_file)
     all_sprites = pygame.sprite.Group()
     all_sprites.add(mate)
