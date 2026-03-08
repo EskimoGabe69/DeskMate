@@ -1,4 +1,4 @@
-<p align="center"><img src="./src/assets/Readmelogo.svg" alt="logo" width="300"></p>
+<p align="center"><img src="./src/assets/ReadmeLogo.svg" alt="logo" width="300"></p>
 
 # DeskMate
 
