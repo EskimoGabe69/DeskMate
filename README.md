@@ -2,6 +2,9 @@
 
 # DeskMate
 
-A little DeskMate walking around on your Dock or Taskbar
+A little DeskMate walking around on your Dock or Taskbar.
 
 <sub>Might rename it tho</sub>
+
+## Goal of this Project
+Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but all of a sudden I had quite the motivation and wanted to create a project that goes bigger. Teaches about maintaining and making a project.
