@@ -4,6 +4,7 @@ import core.constants as constants
 
 class Mate(pygame.sprite.Sprite):
     def __init__(self, mate_image) -> None:
+        # NOTE: Maybe add direction variables here
         super().__init__()
         self.mate_image = mate_image
         self.image = pygame.Surface((50, 50), pygame.SRCALPHA)
@@ -16,3 +17,6 @@ class Mate(pygame.sprite.Sprite):
         self.rect.x += self.vx
         if self.rect.right > constants.WIDTH or self.rect.left < 0:
             self.vx *= -1
+            self.image = pygame.transform.flip(self.image, True, False)
+            # NOTE: Here I want to flip the flip
+            """ self.image.blit(pygame.transform.flip(self.mate_image, True, False), (0, 0)) """
