@@ -1,8 +1,9 @@
 import pygame
 
+# NOTE: Prolly gonna rewrite this because I borrowed it from some random project 😭
 
 def slice_sheet(
-    path: str, sprite_width: int, sprite_height: int
+    path, sprite_width: int, sprite_height: int
 ) -> list[pygame.Surface]:
     sprite_sheet = pygame.image.load(path)
     rows = int(sprite_sheet.get_width() / sprite_width)
