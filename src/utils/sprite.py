@@ -1,5 +1,6 @@
 import pygame
 
+# NOTE: Maybe read the docs about the sprite slicer
 def get_sprite(posx, posy, width, height, sprite_sheet):
     """Extracts image from sprite sheet"""
     image = pygame.Surface([width, height])
