@@ -1,6 +1,7 @@
 import subprocess
 import shlex
 from utils.update_available import update_available
+from utils.update_choice import update_choice
 
 pull_command = "git pull origin dev-branch"
 
@@ -12,10 +13,13 @@ def updater():
     split_pull_command = shlex.split(pull_command)
     if update_available():
         print("Update available!")
-        subprocess.run(
+        if update_choice():
+            subprocess.run(
             split_pull_command,
             check=True,
-        )
-        print("Updated!")
+            )
+            print("Updated!")
+        else:
+            print("Update skipped!")
     else:
         print("No Update available!")

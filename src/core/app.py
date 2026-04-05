@@ -1,11 +1,10 @@
-import pygame
 from components.mate import Mate
-import core.constants as constants
+from core import constants
 from PySide6 import QtGui, QtWidgets
 from components.mainwindow import MainWindow
 import sys
 import os
-
+import pygame
 
 pygame.init()
 game_directory = os.path.dirname(__file__)

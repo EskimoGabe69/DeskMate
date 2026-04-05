@@ -14,7 +14,7 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [X] Sprite changing when hitting the wall
 - [X] Automatic updater
 - [ ] GUI Menu
-- [ ] Updater in the GUI menu 
+- [ ] Updater in the GUI menu
 - [ ] Functional Sprite slicer
 - [ ] proper installer for ease of use
 
@@ -23,8 +23,10 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [ ] Try fixing the sprite slicer(Yes it's there yes it isn't implemented yet xD but im working on it!)
 
 ## Installation 📥
-> Linux/Mac
-> Using uv
+```txt
+Linux/Mac
+Using uv
+```
 ```bash
 uv venv .venv
 # depending on shell this works for zsh(might update for all shells gotta see)
