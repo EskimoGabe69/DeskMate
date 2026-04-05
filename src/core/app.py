@@ -1,11 +1,10 @@
-import pygame
 from components.mate import Mate
-import core.constants as constants
+from core import constants
 from PySide6 import QtGui, QtWidgets
 from components.mainwindow import MainWindow
 import sys
 import os
-
+import pygame
 
 pygame.init()
 game_directory = os.path.dirname(__file__)
@@ -31,8 +30,11 @@ def app(icon_path):
     tray.setToolTip(constants.CAPTION)
     tray.show()
     menu = QtWidgets.QMenu()
+    show_action = QtGui.QAction("Show window", app)
+    show_action.triggered.connect(window.show)
     exit_action = QtGui.QAction("Quit", app)
     exit_action.triggered.connect(app.quit)
+    menu.addAction(show_action)
     menu.addAction(exit_action)
     tray.setContextMenu(menu)
     print("Setup complete")

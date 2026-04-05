@@ -1,34 +1,10 @@
 import pygame
 
+# NOTE: Maybe read the docs about the sprite slicer
+def get_sprite(posx, posy, width, height, sprite_sheet):
+    """Extracts image from sprite sheet"""
+    image = pygame.Surface([width, height])
+    image.blit(sprite_sheet, (0, 0), (posx, posy, width, height))
+    image.set_colorkey("BLACK")
 
-def slice_sheet(
-    path: str, sprite_width: int, sprite_height: int
-) -> list[pygame.Surface]:
-    sprite_sheet = pygame.image.load(path)
-    rows = int(sprite_sheet.get_width() / sprite_width)
-    columns = int(sprite_sheet.get_height() / sprite_height)
-
-    sprites = []
-    for y in range(rows):
-        for x in range(columns):
-            sprites.append(
-                get_sprite_from_sheet(
-                    sprite_sheet,
-                    x * sprite_width,
-                    y * sprite_height,
-                    sprite_width,
-                    sprite_height,
-                )
-            )
-
-    return sprites
-
-
-def get_sprite_from_sheet(
-    sprite_sheet: pygame.Surface, x: int, y: int, width: int, height: int
-) -> pygame.Surface:
-    sprite = pygame.Surface((width, height), pygame.SRCALPHA)
-    sprite.blit(sprite_sheet, (0, 0), (x, y, width, height))
-    sprite = sprite.convert_alpha()
-
-    return sprite
+    return image

@@ -1,7 +1,7 @@
 from core.app import app
 from utils.updater import updater
 
-icon_path = "./assets/first_logo.png"
+icon_path = "./assets/deskmate_logo.svg"
 
 if __name__ == "__main__":
     updater()
