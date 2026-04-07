@@ -32,3 +32,6 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
+## Things I might fix in near future ⏳️
+- [ ] ReadMe logo
+- [ ] sprite slicer
