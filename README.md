@@ -17,6 +17,7 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [ ] Updater in the GUI menu
 - [X] Functional Sprite slicer
 - [ ] proper installer for ease of use
+- [ ] Height picker for like Dock or Taskbar
 
 ## Small ideas 💡
 - [ ] Maybe some sort of gui picker? Where you can easily pick the position of the Spritesheet characters
@@ -30,5 +31,3 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
-## Things I might fix in near future ⏳️
-- [ ] Example Sprite sheet needs to be fixxed
