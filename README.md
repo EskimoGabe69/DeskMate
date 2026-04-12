@@ -15,13 +15,11 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [X] Automatic updater
 - [ ] GUI Menu
 - [ ] Updater in the GUI menu
-- [ ] Functional Sprite slicer
+- [X] Functional Sprite slicer
 - [ ] proper installer for ease of use
 
 ## Small ideas 💡
-- [X] Regarding the logo I might add like taskbar elements to sorta simulate the taskbar itself.
-- [ ] Try fixing the sprite slicer(Yes it's there yes it isn't implemented yet xD but im working on it!)
-
+- [ ] Maybe some sort of gui picker?
 ## Installation 📥
 Linux🐧/Mac🍎 
 Using uv
@@ -33,5 +31,4 @@ source .venv/bin/activate
 uv pip install -r requirenments.txt
 ```
 ## Things I might fix in near future ⏳️
-- [X] ReadMe logo
-- [ ] sprite slicer
+- [ ] Example Sprite sheet needs to be fixxed
