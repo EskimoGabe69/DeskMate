@@ -19,7 +19,7 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [ ] proper installer for ease of use
 
 ## Small ideas 💡
-- [ ] Maybe some sort of gui picker?
+- [ ] Maybe some sort of gui picker? Where you can easily pick the position of the Spritesheet characters
 ## Installation 📥
 Linux🐧/Mac🍎 
 Using uv
