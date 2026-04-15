@@ -14,7 +14,7 @@ asset_directory = os.path.join(parent_directory, "assets")
 
 def app(icon_path):
     sprite_sheet = SpriteSheet(os.path.join(asset_directory, "sprite_sheet.png"))
-    mate_image = sprite_sheet.get_sprite(1, 1, 55, 55)
+    mate_image = sprite_sheet.get_sprite(1, 1, 50, 50)
     mate = Mate(mate_image)
     all_sprites = pygame.sprite.Group()
     all_sprites.add(mate)
