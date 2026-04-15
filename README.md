@@ -31,3 +31,6 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
+## Stuff I might fix pretty soon!!!
+- [ ] Something with the Spritesheet
+- [ ] Add animations
