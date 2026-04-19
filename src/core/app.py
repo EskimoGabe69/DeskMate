@@ -12,7 +12,7 @@ parent_directory = os.path.abspath(os.path.join(game_directory, ".."))
 asset_directory = os.path.join(parent_directory, "assets")
 
 
-def app(icon_path):
+def app(icon_path, css_path):
     sprite_sheet = SpriteSheet(os.path.join(asset_directory, "sprite_sheet.png"))
     mate_image = sprite_sheet.get_sprite(1, 1, 50, 50)
     mate = Mate(mate_image)
@@ -20,4 +20,4 @@ def app(icon_path):
     all_sprites.add(mate)
     constants.SCREEN.fill(constants.TRANSPARENT)
     all_sprites.draw(constants.SCREEN)
-    systemtraymanager(all_sprites, icon_path)
+    systemtraymanager(all_sprites, icon_path, css_path)

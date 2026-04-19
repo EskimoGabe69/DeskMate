@@ -1,5 +1,5 @@
 from components.imagewidget import ImageWidget
-import core.constants as constants
+from core import constants
 from PySide6 import QtWidgets, QtCore
 
 

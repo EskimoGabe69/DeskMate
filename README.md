@@ -34,3 +34,4 @@ uv pip install -r requirenments.txt
 ## Stuff I might fix pretty soon!!!
 - [ ] Something with the Spritesheet
 - [ ] Add animations
+- [ ] GUI menu window for easier use
