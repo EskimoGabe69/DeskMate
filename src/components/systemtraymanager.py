@@ -5,11 +5,10 @@ from core import constants
 from PySide6 import QtGui, QtWidgets
 
 
-
-def systemtraymanager(all_sprites, icon_path, css_path):
+def systemtraymanager(all_sprites, icon_path):
     app = QtWidgets.QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)
-    menu_window = MenuWindow(app, css_path)
+    menu_window = MenuWindow(app)
     menu_window.show()
     window = MainWindow(all_sprites, constants.SCREEN)
     pixmap = QtGui.QPixmap(icon_path)
