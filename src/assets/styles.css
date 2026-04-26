@@ -1,4 +1,19 @@
+QWidget {
+  background-color: grey;
+}
+
+/* TODO: Maybe add some sort of font here to make it look better?*/
+
 QPushButton {
   background-color: red;
   color: blue;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 600;
+  all: unset;
+  border: 2px solid black;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: black;
 }
+

@@ -30,8 +30,5 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.setLayout(grid)
         self.setStyleSheet(self.style_sheet)
 
-    # def _button_clicked(self) -> None:
-    #     print("Test button hello world")
-
     def update_button(self) -> None:
         updater()
