@@ -13,9 +13,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.process = None
         self.text_area = QtWidgets.QPlainTextEdit()
         self.text_area.setReadOnly(True)
-        self.setWindowFlags(
-            self.windowFlags() | QtGui.Qt.WindowType.WindowStaysOnTopHint
-        )
+        self.setWindowFlags(QtCore.Qt.Window)
         self.css_file = QtCore.QFile(css_path)
         self.css_file.open(QtCore.QFile.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
