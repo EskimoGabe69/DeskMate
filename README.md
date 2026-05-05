@@ -34,6 +34,8 @@ uv pip install -r requirenments.txt
 ## Stuff I might fix pretty soon!!!
 - [ ] Something with the Spritesheet
 - [ ] Add animations
-- [ ] GUI menu window for easier use
 - [ ] might fix the css styling maybe make some basic theming
+
+## Stuff I might add pretty soon
 - [ ] make a docker version maybe
+- [ ] GUI menu window for easier use
