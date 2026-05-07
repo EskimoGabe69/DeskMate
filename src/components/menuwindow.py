@@ -3,6 +3,8 @@ from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
 
+from utils.update_message import update_message
+
 css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
 
 
@@ -29,6 +31,10 @@ class MenuWindow(QtWidgets.QMainWindow):
         grid.addWidget(self.text_area)
         self.setLayout(grid)
         self.setStyleSheet(self.style_sheet)
+        self.update_available = update_message() 
+        self.text = QtWidgets.QLabel(self.update_available)
+        grid.addWidget(self.text)
+
 
     def update_button(self) -> None:
         if self.process is not None:
