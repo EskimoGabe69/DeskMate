@@ -1,23 +1,33 @@
 @font-face {
-  font-family: nabla;
-  src: url("./Nabla-regular.ttf") format("truetype");
+  font-family: "Basic";
+  src: url("./Basic-Regular.ttf") format("truetype");
+  font-display: swap;
   font-style: normal;
-  font-weight: normal;
 }
 
+:root {
+  --color-crust: #181926;
+  --color-surface-0: #363a4f;
+  --color-mauve: #c6a0f6;
+  --color-blue: #8aadf4;
+  --color-red: #ed8796;
+  --color-text: #cad3f5;
+}
+
+
 QWidget {
-  background-color: grey;
+  background-color: var(--color-crust);
 }
 
 
 QPushButton {
-  background-color: red;
-  
+  background-color: var(--color-red);
+
   font-size: 25px;
-  font-family: nabla;
+  font-family: Basic;
 
   all: unset;
-  border: 2px solid black;
+  border: 2px solid var(--color-crust);
   padding: 15px 25px;
   border-radius: 10px;
 }
@@ -25,4 +35,11 @@ QPushButton {
 QPlainTextEdit {
   all: unset;
   border: none;
+}
+
+QLabel {
+  color: white;
+  font-size: 18px;
+  background-color: var(--color-surface-0);
+  opacity: 0.6;
 }
