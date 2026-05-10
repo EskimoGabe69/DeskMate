@@ -17,7 +17,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.text_area.setReadOnly(True)
         self.setWindowFlags(QtCore.Qt.Window)
         self.css_file = QtCore.QFile(css_path)
-        self.css_file.open(QtCore.QFile.ReadOnly)
+        self.css_file.open(QtCore.QFile.OpenModeFlag.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
         self.css_file.close()
         self.setWindowTitle(constants.CAPTION)
@@ -31,10 +31,10 @@ class MenuWindow(QtWidgets.QMainWindow):
         grid.addWidget(self.text_area)
         self.setLayout(grid)
         self.setStyleSheet(self.style_sheet)
-        self.update_available = update_message() 
+        self.update_available = update_message()
         self.text = QtWidgets.QLabel(self.update_available)
+        self.text.adjustSize()
         grid.addWidget(self.text)
-
 
     def update_button(self) -> None:
         if self.process is not None:

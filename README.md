@@ -38,4 +38,4 @@ uv pip install -r requirenments.txt
 
 ## Stuff I might add pretty soon
 - [ ] make a docker version maybe
-- [ ] GUI menu window for easier use
+- [X] GUI menu window for easier use
