@@ -22,26 +22,29 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.css_file.close()
         self.setWindowTitle(constants.CAPTION)
         grid = QtWidgets.QGridLayout()
-        self.button = QtWidgets.QPushButton("Update button", self)
+        self.updater_button = QtWidgets.QPushButton("Update button", self)
+        self.sprite_button = QtWidgets.QPushButton("Insert new sprite", self)
         central_widget = QtWidgets.QWidget()
         central_widget.setLayout(grid)
         self.setCentralWidget(central_widget)
-        self.button.clicked.connect(self.update_button)
-        grid.addWidget(self.button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
+        self.updater_button.clicked.connect(self.update_button)
+        self.sprite_button.clicked.connect(self.sprite_btn_return)
+        grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
+        grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.text_area)
         self.setLayout(grid)
         self.setStyleSheet(self.style_sheet)
         self.update_available = update_message()
         self.text = QtWidgets.QLabel(self.update_available)
         self.text.adjustSize()
-        grid.addWidget(self.text)
+        grid.addWidget(self.text, 1920, 0, QtGui.Qt.AlignmentFlag.AlignLeft)
 
     def update_button(self) -> None:
         if self.process is not None:
             return
 
         self.text_area.clear()
-        self.button.setEnabled(False)
+        self.updater_button.setEnabled(False)
 
         self.process = QtCore.QProcess(self)
         self.process.readyReadStandardOutput.connect(self.handle_stdout)
@@ -63,4 +66,8 @@ class MenuWindow(QtWidgets.QMainWindow):
     def process_finished(self):
         self.text_area.appendPlainText("Update finished!")
         self.process = None
-        self.button.setEnabled(True)
+        self.updater_button.setEnabled(True)
+
+
+    def sprite_btn_return(self):
+        print("Sprite sheet test button")

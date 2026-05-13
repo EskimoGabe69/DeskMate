@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Basic";
+  font-family: Basic;
   src: url("./Basic-Regular.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
@@ -13,9 +13,11 @@
 /*   --color-crust: #181926; */
 /*   --color-surface-0: #363a4f; */
 /*   --color-mauve: #c6a0f6; */
+/* --color-pink-mauve-hover: #f5c2e7;*/
 /*   --color-blue: #8aadf4; */
 /*   --color-red: #ed8796; */
 /*   --color-text: #cad3f5; */
+/* --color-text-hover: #a6adc8;*/
 /* --color-surface-2:  #c6a0f6;*/
 
 
@@ -32,6 +34,12 @@ QPushButton {
   border: 3px solid #8aadf4;
   padding: 15px 25px;
   border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+QPushButton:hover {
+  background-color: #f5c2e7;
+  color: #a6adc8;
 }
 
 QPlainTextEdit {
@@ -41,12 +49,13 @@ QPlainTextEdit {
   font-size: 12px;
 }
 
-QLabel { 
+QLabel {
+  padding: 5px 5px;
   color: #cad3f5;
   border-radius: 10px;
   border: 3px solid #8aadf4;
   font-size: 18px;
   background-color: #363a4f;
   all: unset;
-  opacity: 0.6; 
+  opacity: 0.6;
 }

@@ -13,7 +13,7 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [X] Basic function of an object going left and right
 - [X] Sprite changing when hitting the wall
 - [X] Automatic updater
-- [ ] GUI Menu
+- [X] GUI Menu
 - [ ] Updater in the GUI menu
 - [X] Functional Sprite slicer
 - [ ] proper installer for ease of use
@@ -34,7 +34,7 @@ uv pip install -r requirenments.txt
 ## Stuff I might fix pretty soon!!!
 - [ ] Something with the Spritesheet
 - [ ] Add animations
-- [ ] might fix the css styling maybe make some basic theming
+- [X] might fix the css styling maybe make some basic theming
 
 ## Stuff I might add pretty soon
 - [ ] make a docker version maybe
