@@ -70,4 +70,5 @@ class MenuWindow(QtWidgets.QMainWindow):
 
 
     def sprite_btn_return(self):
-        print("Sprite sheet test button")
+        file_dialog = QtWidgets.QFileDialog(self)
+        file_dialog.exec()

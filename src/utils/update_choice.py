@@ -3,4 +3,5 @@ def update_choice():
     if updated_choice_string.lower() == "y":
         return True
     elif updated_choice_string.lower() == "n":
-        return False 
+        return False
+    
