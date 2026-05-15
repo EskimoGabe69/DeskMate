@@ -14,7 +14,7 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [X] Sprite changing when hitting the wall
 - [X] Automatic updater
 - [X] GUI Menu
-- [ ] Updater in the GUI menu
+- [X] Updater in the GUI menu
 - [X] Functional Sprite slicer
 - [ ] proper installer for ease of use
 - [ ] Height picker for like Dock or Taskbar
@@ -35,6 +35,7 @@ uv pip install -r requirenments.txt
 - [ ] Something with the Spritesheet
 - [ ] Add animations
 - [X] might fix the css styling maybe make some basic theming
+- [ ] fix the spritesheet picker in the menu
 
 ## Stuff I might add pretty soon
 - [ ] make a docker version maybe

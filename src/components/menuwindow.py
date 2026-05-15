@@ -68,7 +68,6 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.process = None
         self.updater_button.setEnabled(True)
 
-
     def sprite_btn_return(self):
-        file_dialog = QtWidgets.QFileDialog(self)
-        file_dialog.exec()
+        filename = QtWidgets.QFileDialog.getOpenFileName(self, self.tr("Open image"), "../assets/.", self.tr("(*.jpg, *.png)"))
+        print(filename)
