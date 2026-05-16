@@ -2,8 +2,9 @@ import shlex
 from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
-
+from utils.sprite_sheet_picker import sprite_sheet_picker
 from utils.update_message import update_message
+
 
 css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
 
@@ -69,5 +70,4 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.updater_button.setEnabled(True)
 
     def sprite_btn_return(self):
-        filename = QtWidgets.QFileDialog.getOpenFileName(self, self.tr("Open image"), "../assets/.", self.tr("(*.jpg, *.png)"))
-        print(filename)
+        sprite_sheet_picker(self)
