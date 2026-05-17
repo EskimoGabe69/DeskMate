@@ -29,6 +29,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         central_widget.setLayout(grid)
         self.setCentralWidget(central_widget)
         self.updater_button.clicked.connect(self.update_button)
+        # NOTE: add a signal here for component that takes sprites maybe systemtraymanager 
         self.sprite_button.clicked.connect(self.sprite_btn_return)
         grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
