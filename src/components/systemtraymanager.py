@@ -7,10 +7,13 @@ from PySide6 import QtGui, QtWidgets
 
 def systemtraymanager(all_sprites, icon_path):
     app = QtWidgets.QApplication(sys.argv)
+
     app.setQuitOnLastWindowClosed(False)
     menu_window = MenuWindow(app)
     menu_window.show()
     window = MainWindow(all_sprites, constants.SCREEN)
+    menu_window = MenuWindow(app)
+    menu_window.sprite_selected.connect(window.add_sprite)
     pixmap = QtGui.QPixmap(icon_path)
     scaled_pixmap = pixmap.scaled(32, 32)
     icon = QtGui.QIcon(scaled_pixmap)

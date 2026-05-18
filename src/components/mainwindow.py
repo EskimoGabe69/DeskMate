@@ -18,6 +18,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timer.start(1000 // 30)
         self.all_sprites = all_sprites
 
+    def add_sprite(self, sprite):
+        self.all_sprites.add(sprite)
+
     def game_step(self): 
         constants.SCREEN.fill(constants.TRANSPARENT)
         self.all_sprites.update()
