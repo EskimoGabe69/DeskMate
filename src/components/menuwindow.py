@@ -21,6 +21,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.css_file.open(QtCore.QFile.OpenModeFlag.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
         self.css_file.close()
+        # NOTE: put the Signal as a different component needs QObject
         self.sprite_selected = QtCore.Signal(str)
         self.setWindowTitle(constants.CAPTION)
         grid = QtWidgets.QGridLayout()
