@@ -1,3 +1,4 @@
+#!../.venv/bin/python3.13
 from core.app import app
 
 

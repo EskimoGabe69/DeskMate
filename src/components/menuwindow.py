@@ -2,6 +2,7 @@ import shlex
 from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
+from core.signal import SpriteSignal
 from utils.sprite_sheet_picker import sprite_sheet_picker
 from utils.update_message import update_message
 
@@ -21,8 +22,6 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.css_file.open(QtCore.QFile.OpenModeFlag.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
         self.css_file.close()
-        # NOTE: put the Signal as a different component needs QObject
-        self.sprite_selected = QtCore.Signal(str)
         self.setWindowTitle(constants.CAPTION)
         grid = QtWidgets.QGridLayout()
         self.updater_button = QtWidgets.QPushButton("Update button", self)
@@ -31,7 +30,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         central_widget.setLayout(grid)
         self.setCentralWidget(central_widget)
         self.updater_button.clicked.connect(self.update_button)
-        self.sprite_button.clicked.connect(self.sprite_btn_return)
+        self.sprite_button.clicked.connect(SpriteSignal.sprite_btn_return)
         grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.text_area)
@@ -71,7 +70,3 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.process = None
         self.updater_button.setEnabled(True)
 
-    def sprite_btn_return(self):
-        file_path, _ = sprite_sheet_picker(self)
-        if file_path:
-            self.sprite_selected.emit(file_path)

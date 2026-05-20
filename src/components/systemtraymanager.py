@@ -3,6 +3,7 @@ from components.mainwindow import MainWindow
 from components.menuwindow import MenuWindow
 from core import constants
 from PySide6 import QtGui, QtWidgets
+from core.signal import SpriteSignal
 
 
 def systemtraymanager(all_sprites, icon_path):
@@ -12,8 +13,8 @@ def systemtraymanager(all_sprites, icon_path):
     menu_window = MenuWindow(app)
     menu_window.show()
     window = MainWindow(all_sprites, constants.SCREEN)
-    menu_window = MenuWindow(app)
-    menu_window.sprite_selected.connect(window.add_sprite)
+    signal = SpriteSignal()
+    signal.sprite_selected.connect(window.add_sprite)
     pixmap = QtGui.QPixmap(icon_path)
     scaled_pixmap = pixmap.scaled(32, 32)
     icon = QtGui.QIcon(scaled_pixmap)
