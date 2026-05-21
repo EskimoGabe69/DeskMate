@@ -10,6 +10,6 @@ class SpriteSignal(QtCore.QObject):
         super(SpriteSignal, self).__init__()
 
     def sprite_btn_return(self):
-        file_path = sprite_sheet_picker(self)
+        file_path = sprite_sheet_picker()
         if file_path:
             self.sprite_selected.emit(file_path)
