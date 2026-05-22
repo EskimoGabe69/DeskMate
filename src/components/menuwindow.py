@@ -3,7 +3,6 @@ from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
 from core.signal import SpriteSignal
-from utils.sprite_sheet_picker import sprite_sheet_picker
 from utils.update_message import update_message
 
 
@@ -30,7 +29,8 @@ class MenuWindow(QtWidgets.QMainWindow):
         central_widget.setLayout(grid)
         self.setCentralWidget(central_widget)
         self.updater_button.clicked.connect(self.update_button)
-        self.sprite_button.clicked.connect(SpriteSignal.sprite_btn_return)
+        self.sprite_signal = SpriteSignal()
+        self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)
         grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.text_area)

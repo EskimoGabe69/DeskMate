@@ -30,11 +30,9 @@ QPushButton {
   background-color: #c6a0f6;
   color: #363a4f;
   font-size: 25px;
-  all: unset;
   border: 3px solid #8aadf4;
   padding: 15px 25px;
   border-radius: 10px;
-  transition: background-color 0.3s ease-in-out;
 }
 
 QPushButton:hover {
@@ -43,7 +41,6 @@ QPushButton:hover {
 }
 
 QPlainTextEdit {
-  all: unset;
   border: none;
   color: #cad3f5;
   font-size: 12px;
@@ -56,6 +53,5 @@ QLabel {
   border: 3px solid #8aadf4;
   font-size: 18px;
   background-color: #363a4f;
-  all: unset;
   opacity: 0.6;
 }
