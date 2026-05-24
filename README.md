@@ -19,8 +19,6 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [ ] proper installer for ease of use
 - [ ] Height picker for like Dock or Taskbar
 
-## Small ideas 💡
-- [ ] Maybe some sort of gui picker? Where you can easily pick the position of the Spritesheet characters
 ## Installation 📥
 Linux🐧/Mac🍎 
 Using uv
@@ -31,12 +29,4 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
-## Stuff I might fix pretty soon!!!
-- [ ] Something with the Spritesheet
-- [ ] Add animations
-- [X] might fix the css styling maybe make some basic theming
-- [X] fix the spritesheet picker in the menu
-
-## Stuff I might add pretty soon
-- [ ] make a docker version maybe
-- [X] GUI menu window for easier use
+[./README.md](Other things I wanna do)
