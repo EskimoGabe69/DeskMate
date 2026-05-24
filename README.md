@@ -29,4 +29,4 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
-[./README.md](Other things I wanna do)
+[Other things I wanna do](./TODO.md)
