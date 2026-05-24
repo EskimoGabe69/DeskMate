@@ -5,7 +5,7 @@
 - [ ] GUI picker for spritesheets to put into the config file
 - [ ] YAML or other config file for Matesprite sheet
 - [ ] Make the insert spritesheet in the menu ask for an existing config or make a new one
-- [ ] Docker image
+- [ ] Docker/Podman image
 
 ## Stuff I'm gonna fix pretty soon!!!
 - [ ] Something with the Spritesheet
