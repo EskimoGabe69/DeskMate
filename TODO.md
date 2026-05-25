@@ -12,4 +12,4 @@
 - [ ] Add animations
 - [X] might fix the css styling maybe make some basic theming
 - [X] fix the spritesheet picker in the menu
-
+- [ ] Crossplatform bug with installing
