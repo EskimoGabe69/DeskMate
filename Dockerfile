@@ -13,7 +13,6 @@ RUN python -m venv .venv && \
   .venv/bin/pip install --upgrade pip && \
   .venv/bin/pip install -r requirements.txt
 
-COPY . .
+COPY src .
 
 CMD [".venv/bin/python", "main.py"]
-
