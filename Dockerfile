@@ -1,9 +1,16 @@
-FROM python:3:13-slim
+FROM python:3.13-slim
 
 WORKDIR /src
 
 RUN apt-get update && apt-get install -y \ 
   libsdl2-dev \
+  python3-xlib \
+  libx11-dev \
+  libxrandr-dev \
+  libxcb-cursor-dev \
+  libxcb-cursor0 \
+  qt6-base-dev \
+  -qq libglu1-mesa-dev libx11-xcb-dev '^libxcb*' \
   && rm -rf /var/lib/apt/lists/*
 
 
