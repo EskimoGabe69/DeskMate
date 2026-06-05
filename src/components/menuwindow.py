@@ -71,4 +71,3 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.text_area.appendPlainText("Update finished!")
         self.process = None
         self.updater_button.setEnabled(True)
-
