@@ -7,7 +7,7 @@ from PySide6.QtGui import QMouseEvent, QPaintEvent, QPainter, QPen, QPixmap
 
 class SpriteAreaPicker(QtWidgets.QWidget):
     def __init__(self, parent=None) -> None:
-        super.__init__(parent)
+        super().__init__(parent)
         self.image = None
         self.selection_start = None
         self.selection_end = None
