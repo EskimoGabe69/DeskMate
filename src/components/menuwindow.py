@@ -1,4 +1,5 @@
 import shlex
+from components.sprite_area_picker import SpriteAreaPicker
 from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
@@ -31,7 +32,10 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.updater_button.clicked.connect(self.update_button)
         self.updater_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.sprite_signal = SpriteSignal()
-        self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)
+        self.area_picker = SpriteAreaPicker()
+        grid.addWidget(self.area_picker)
+        self.sprite_button.clicked.connect(self.load_image)
+        """ self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return) """
         self.sprite_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
@@ -42,6 +46,9 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.text = QtWidgets.QLabel(self.update_available)
         self.text.adjustSize()
         grid.addWidget(self.text, 1920, 0, QtGui.Qt.AlignmentFlag.AlignLeft)
+
+    def load_image(self):
+        self.area_picker.load_image(self.sprite_signal.sprite_btn_return)
 
     def update_button(self) -> None:
         if self.process is not None:

@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - PYGAME_DETECT_AVX2=1
-      - DISPLAY=${DISPLAY}
+      - DISPLAY=${DISPLAY:-:0}
+      - QT_QPA_PLATFORM=xcb
       - QT_X11_NO_MITSHM=1
       - QT_DEBUG_PLUGINS=1
       - XDG_RUNTIME_DIR=/tmp/runtime-root
