@@ -2,8 +2,6 @@ from PySide6 import QtWidgets
 from PySide6.QtCore import QRect, Qt
 from PySide6.QtGui import QMouseEvent, QPaintEvent, QPainter, QPen, QPixmap
 
-# TODO: Figure out how to make it work in the signal or with the signal.
-
 
 class SpriteAreaPicker(QtWidgets.QWidget):
     def __init__(self, parent=None) -> None:

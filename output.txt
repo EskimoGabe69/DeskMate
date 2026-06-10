@@ -1,0 +1,177 @@
+Attaching to deskmate-1
+ Container deskmate-deskmate-1 Starting 
+ Container deskmate-deskmate-1 Started 
+deskmate-1  | ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+deskmate-1  | ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+deskmate-1  | ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+deskmate-1  | ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+deskmate-1  | ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+deskmate-1  | ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+deskmate-1  | ALSA lib conf.c:5728:(snd_config_expand) Evaluate error: No such file or directory
+deskmate-1  | ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
+deskmate-1  | qt.core.plugin.factoryloader: checking directory path "/src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms" ...
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqeglfs.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqeglfs.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "eglfs"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QEglFSIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("eglfs")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqoffscreen.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqoffscreen.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "offscreen"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QOffscreenIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("offscreen")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqxcb.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqxcb.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "xcb"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QXcbIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("xcb")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqminimal.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqminimal.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "minimal"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QMinimalIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("minimal")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqwayland.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqwayland.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "wayland",
+deskmate-1  |             "wayland-egl",
+deskmate-1  |             "wayland-brcm"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QWaylandIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("wayland", "wayland-egl", "wayland-brcm")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqlinuxfb.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqlinuxfb.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "linuxfb"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QLinuxFbIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("linuxfb")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqminimalegl.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqminimalegl.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "minimalegl"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QMinimalEglIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("minimalegl")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqvnc.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqvnc.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "vnc"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QVncIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("vnc")
+deskmate-1  | qt.core.plugin.factoryloader: looking at "libqvkkhrdisplay.so"
+deskmate-1  | qt.core.plugin.loader: Found metadata in lib /src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqvkkhrdisplay.so, metadata=
+deskmate-1  | {
+deskmate-1  |     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+deskmate-1  |     "MetaData": {
+deskmate-1  |         "Keys": [
+deskmate-1  |             "vkkhrdisplay"
+deskmate-1  |         ]
+deskmate-1  |     },
+deskmate-1  |     "archlevel": 2,
+deskmate-1  |     "className": "QVkKhrDisplayIntegrationPlugin",
+deskmate-1  |     "debug": false,
+deskmate-1  |     "version": 396032
+deskmate-1  | }
+deskmate-1  | 
+deskmate-1  | 
+deskmate-1  | qt.core.plugin.factoryloader: Got keys from plugin meta data QList("vkkhrdisplay")
+deskmate-1  | qt.core.plugin.factoryloader: checking directory path "/usr/local/bin/platforms" ...
+deskmate-1  | qt.core.library: "/src/.venv/lib/python3.13/site-packages/PySide6/Qt/plugins/platforms/libqxcb.so" loaded library
+deskmate-1  | qt.qpa.xcb: could not connect to display :0
+deskmate-1  | qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+deskmate-1  | qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+deskmate-1  | This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+deskmate-1  | 
+deskmate-1  | Available platform plugins are: eglfs, offscreen, xcb, minimal, wayland-brcm, wayland-egl, wayland, linuxfb, minimalegl, vnc, vkkhrdisplay.
+deskmate-1  | 
+[Kdeskmate-1 exited with code 139

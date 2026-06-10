@@ -34,21 +34,20 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.sprite_signal = SpriteSignal()
         self.area_picker = SpriteAreaPicker()
         grid.addWidget(self.area_picker)
-        self.sprite_button.clicked.connect(self.load_image)
-        """ self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return) """
+        self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)
+        self.sprite_signal.sprite_selected.connect(self.load_image)
         self.sprite_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         grid.addWidget(self.updater_button, 0, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.text_area)
-        self.setLayout(grid)
         self.setStyleSheet(self.style_sheet)
         self.update_available = update_message()
         self.text = QtWidgets.QLabel(self.update_available)
         self.text.adjustSize()
         grid.addWidget(self.text, 1920, 0, QtGui.Qt.AlignmentFlag.AlignLeft)
 
-    def load_image(self):
-        self.area_picker.load_image(self.sprite_signal.sprite_btn_return)
+    def load_image(self, file_path):
+        self.area_picker.load_image(file_path)
 
     def update_button(self) -> None:
         if self.process is not None:
