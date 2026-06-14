@@ -1,20 +1,22 @@
 services:
   deskmate:
+    network_mode: host
     image: deskmate:latest
     build:
-      context: src
       dockerfile: Dockerfile
     environment:
       - PYGAME_DETECT_AVX2=1
       - DISPLAY=${DISPLAY:-:0}
-      - QT_QPA_PLATFORM=xcb
+      - QT_QPA_PLATFORM=offscreen
       - QT_X11_NO_MITSHM=1
-      - QT_DEBUG_PLUGINS=1
+      - QT_DEBUG_PLUGINS=0
       - XDG_RUNTIME_DIR=/tmp/runtime-root
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.Xauthority:/root/.Xauthority:ro    
     cap_add:
       - SYS_ADMIN
     devices:
       - /dev/dri:/dev/dri
-
+    security_opt:
+      - seccomp:unconfined
