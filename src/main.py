@@ -1,4 +1,3 @@
-#!../.venv/bin/python
 from core.app import app
 
 
