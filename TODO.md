@@ -14,5 +14,5 @@
 - [X] Crossplatform bug with installing
 
 ## Ditched ideas
-- [ ] Docker/Podman image
-
+~~- [ ] Docker/Podman image~~
+ 

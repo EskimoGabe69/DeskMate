@@ -3,6 +3,7 @@ from . import mainwindow
 from . import mate
 from . import systemtraymanager
 from . import menuwindow
-from. import sprite_area_picker
+from . import sprite_area_picker
+from . import character_animated_frames
 
-__all__ = ["imagewidget", "mainwindow", "mate", "systemtraymanager", "menuwindow", "sprite_area_picker"]
+__all__ = ["imagewidget", "mainwindow", "mate", "systemtraymanager", "menuwindow", "sprite_area_picker", "character_animated_frames"]
