@@ -5,7 +5,7 @@ from PySide6 import QtWidgets, QtCore
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, all_sprites, surface, parent=None) -> None:
-        super(MainWindow, self).__init__(parent)
+        super().__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
         self.setWindowTitle(constants.CAPTION)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)

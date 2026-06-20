@@ -7,8 +7,8 @@
 - [ ] Make the insert spritesheet in the menu ask for an existing config or make a new one
 
 ## Stuff I'm gonna fix pretty soon!!!
-- [ ] Something with the Spritesheet
-- [ ] Add animations
+- [X] Something with the Spritesheet
+- [X] Add animations
 - [X] might fix the css styling maybe make some basic theming
 - [X] fix the spritesheet picker in the menu
 - [X] Crossplatform bug with installing

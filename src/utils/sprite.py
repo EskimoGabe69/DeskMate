@@ -6,7 +6,6 @@ class SpriteSheet:
     def __init__(self, file) -> None:
         self.sheet = pygame.image.load(file)
 
-    # NOTE: gonna change location for x and y coords and have width and height pre-assigned
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
@@ -21,7 +20,7 @@ class SpriteSheet:
             "frame_counter": 0,
             "frame_duration": frame_duration,
         }
- 
+
     def update_animation(self, animation):
         animation["frame_counter"] += 1
         if animation["frame_counter"] >= animation["frame_duration"]:

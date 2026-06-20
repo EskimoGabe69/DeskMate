@@ -13,7 +13,7 @@ asset_directory = os.path.join(os.path.dirname(__file__), "..", "assets")
 sprite_sheet_path = os.path.join(asset_directory, "sprite_sheet.png")
 icon_path = os.path.join(asset_directory, "deskmate_logo.svg")
 
-
+# TODO: Implement YAML logic and something with the area picker
 walk_animation = [
         (1, 1, 50, 50),
         (63, 1, 50, 50),
