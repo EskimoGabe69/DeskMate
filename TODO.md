@@ -12,7 +12,8 @@
 - [X] might fix the css styling maybe make some basic theming
 - [X] fix the spritesheet picker in the menu
 - [X] Crossplatform bug with installing
+- [ ] Whatever bug I have with the Surface I have the animation on
 
 ## Ditched ideas
-~~- [ ] Docker/Podman image~~
+~~Docker/Podman image~~
  
