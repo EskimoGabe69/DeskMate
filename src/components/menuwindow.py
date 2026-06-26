@@ -12,7 +12,7 @@ css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
 
 class MenuWindow(QtWidgets.QMainWindow):
     def __init__(self, app, parent=None) -> None:
-        super(MenuWindow, self).__init__(parent)
+        super().__init__(parent)
         self.app = app
         self.process = None
         self.text_area = QtWidgets.QPlainTextEdit()
@@ -32,6 +32,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.updater_button.clicked.connect(self.update_button)
         self.updater_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.sprite_signal = SpriteSignal()
+        # NOTE: Might move it to config_ask_window
         self.area_picker = SpriteAreaPicker()
         grid.addWidget(self.area_picker)
         self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)

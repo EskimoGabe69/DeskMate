@@ -1,4 +1,5 @@
 import sys
+from components.config_ask_window import ConfigAskWindow
 from components.mainwindow import MainWindow
 from components.menuwindow import MenuWindow
 from core import constants
@@ -13,6 +14,8 @@ def systemtraymanager(all_sprites, icon_path):
     menu_window = MenuWindow(app)
     menu_window.show()
     window = MainWindow(all_sprites, constants.SCREEN)
+    config_window = ConfigAskWindow(app)
+    config_window.show()
     signal = SpriteSignal()
     signal.sprite_selected.connect(window.add_sprite)
     pixmap = QtGui.QPixmap(icon_path)
