@@ -32,7 +32,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.updater_button.clicked.connect(self.update_button)
         self.updater_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.sprite_signal = SpriteSignal()
-        # NOTE: Might move it to config_ask_window
+        # NOTE: Might move it to config_ask_window(the SpriteAreaPicker) 
         self.area_picker = SpriteAreaPicker()
         grid.addWidget(self.area_picker)
         self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)

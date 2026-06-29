@@ -40,7 +40,8 @@ QPushButton:hover {
   color: #a6adc8;
 }
 
-QPlainTextEdit {
+QPlainTextEdit,
+QTextEdit {
   border: none;
   color: #cad3f5;
   font-size: 12px;
