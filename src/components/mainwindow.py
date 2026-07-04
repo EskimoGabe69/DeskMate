@@ -25,4 +25,4 @@ class MainWindow(QtWidgets.QMainWindow):
         constants.SCREEN.fill(constants.TRANSPARENT)
         self.all_sprites.update()
         self.all_sprites.draw(constants.SCREEN)
-        self.centralWidget().update()
+        self.centralWidget().update() 

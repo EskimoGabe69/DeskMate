@@ -20,7 +20,7 @@ walk_animation = [
         (130, 1, 50, 50),
         (194, 3, 50, 50)
         ]
-
+# something 
 
 def app():
     sprite_sheet = SpriteSheet(sprite_sheet_path) 

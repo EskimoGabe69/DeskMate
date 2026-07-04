@@ -22,4 +22,4 @@ class Mate(pygame.sprite.Sprite):
             self.vx *= -1
             self.facing_left = not self.facing_left
         if self.facing_left:
-            self.image = pygame.transform.flip(self.image, True, False) 
+            self.image = pygame.transform.flip(self.image, True, False)  
