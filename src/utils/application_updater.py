@@ -1,0 +1,3 @@
+class ApplicationUpdater:
+    ...
+    # NOTE: under construction here im going to bundle all of the updater functions

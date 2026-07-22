@@ -4,6 +4,13 @@ from PySide6.QtGui import QMouseEvent, QPaintEvent, QPainter, QPen, QPixmap
 
 
 class SpriteAreaPicker(QtWidgets.QWidget):
+    """
+    Utility class which allows the user to load an image and based on the mouse selection get the coordinations for the mate they might need
+    (e.g x_coordination, y_coordination, width, height)
+
+    Still under construction.
+    """
+
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
         self.image = None

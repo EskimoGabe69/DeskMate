@@ -4,6 +4,17 @@ from PySide6 import QtWidgets, QtCore
 
 
 class MainWindow(QtWidgets.QMainWindow):
+    """
+    Component class which is used to render the mate walking, this is used because Pygame utilizes SDL3 and this doesnt support transperency.
+
+    Usecase:
+        main_window = MainWindow(all_sprites, surface)
+        main_window.show()
+    Attributes:
+        all_sprites: which is the Pygame sprite group
+        surface: is the surface we wanna draw onto(our case its the Screen)
+    """
+
     def __init__(self, all_sprites, surface, parent=None) -> None:
         super().__init__(parent)
         self.setCentralWidget(ImageWidget(surface))
@@ -21,8 +32,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def add_sprite(self, sprite):
         self.all_sprites.add(sprite)
 
-    def game_step(self): 
+    def game_step(self):
         constants.SCREEN.fill(constants.TRANSPARENT)
         self.all_sprites.update()
         self.all_sprites.draw(constants.SCREEN)
-        self.centralWidget().update() 
+        self.centralWidget().update()

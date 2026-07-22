@@ -5,6 +5,16 @@ css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
 
 
 class ConfigAskWindow(QtWidgets.QMainWindow):
+    """
+    A component class, for config ask window. With the intention of asking a new or existing YAML config.
+    Usecase:
+        config_ask_window = ConfigAskWindow(app)
+        config_ask_window.show() # which will show the window
+
+    Attributes:
+        app: object of QApplication from QtWidgets
+    """
+
     def __init__(self, app, parent=None):
         super().__init__(parent)
         self.app = app

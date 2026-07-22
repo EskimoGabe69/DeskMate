@@ -6,11 +6,22 @@ import os
 from core.signal import SpriteSignal
 from utils.update_message import update_message
 
-
+# NOTE: prolly gonna make it a constant
 css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
 
 
 class MenuWindow(QtWidgets.QMainWindow):
+    """
+    Class component which shows the menu of the application
+
+    Usecase:
+        menuwindow = MenuWindow(app)
+        menuwindow.show()
+
+    Attributes:
+        app: object of QApplication from QtWidgets
+    """
+
     def __init__(self, app, parent=None) -> None:
         super().__init__(parent)
         self.app = app
@@ -32,7 +43,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.updater_button.clicked.connect(self.update_button)
         self.updater_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.sprite_signal = SpriteSignal()
-        # NOTE: Might move it to config_ask_window(the SpriteAreaPicker) 
+        # NOTE: Might move it to config_ask_window(the SpriteAreaPicker)
         self.area_picker = SpriteAreaPicker()
         grid.addWidget(self.area_picker)
         self.sprite_button.clicked.connect(self.sprite_signal.sprite_btn_return)
