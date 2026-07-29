@@ -23,20 +23,22 @@ class Mate(pygame.sprite.Sprite):
         self.animation = self.spritesheet.get_animation(
             animation_coords, frame_duration
         )
-        self.image = self.animation["frames"][0]
-        self.rect = self.image.get_rect()
-        self.image.blit(self.image, (0, 0))
+        self.original_image = self.animation["frames"][0]
+        self.flipped_image = pygame.transform.flip(self.original_image, True, False) 
+        self.image = self.original_image 
+        self.rect = self.image.get_rect() 
         self.rect.center = (constants.WIDTH // 2, constants.HEIGHT // 2)
         self.vx = 2
         self.facing_left = False
 
     def update(self) -> None:
         current_frame = self.spritesheet.update_animation(self.animation)
-        if current_frame != self.image:
-            self.image = current_frame
+        print(f"Current frame {current_frame}") 
+        if current_frame is not None and current_frame != self.original_image:
+            self.original_image = current_frame
+            self.flipped_image = pygame.transform.flip(self.original_image, True, False)
         self.rect.x += self.vx
         if self.rect.right > constants.WIDTH or self.rect.left < 0:
             self.vx *= -1
             self.facing_left = not self.facing_left
-        if self.facing_left:
-            self.image = pygame.transform.flip(self.image, True, False)
+        self.image = self.flipped_image if self.facing_left else self.original_image

@@ -15,6 +15,7 @@ class SpriteSheet:
 
     def __init__(self, file) -> None:
         self.sheet = pygame.image.load(file)
+        print(f"the sprite sheet: {self.sheet}")
 
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
