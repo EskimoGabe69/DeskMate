@@ -15,12 +15,11 @@ class SpriteSheet:
 
     def __init__(self, file) -> None:
         self.sheet = pygame.image.load(file)
-        print(f"the sprite sheet: {self.sheet}")
 
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
-        sprite.set_colorkey(WHITE)
+        sprite.set_colorkey(WHITE) 
         return sprite
 
     def get_animation(self, coords, frame_duration):
@@ -39,4 +38,4 @@ class SpriteSheet:
             animation["current_frame"] = (animation["current_frame"] + 1) % len(
                 animation["frames"]
             )
-            return animation["frames"][animation["current_frame"]]
+        return animation["frames"][animation["current_frame"]]

@@ -32,8 +32,7 @@ class Mate(pygame.sprite.Sprite):
         self.facing_left = False
 
     def update(self) -> None:
-        current_frame = self.spritesheet.update_animation(self.animation)
-        print(f"Current frame {current_frame}") 
+        current_frame = self.spritesheet.update_animation(self.animation) 
         if current_frame is not None and current_frame != self.original_image:
             self.original_image = current_frame
             self.flipped_image = pygame.transform.flip(self.original_image, True, False)
