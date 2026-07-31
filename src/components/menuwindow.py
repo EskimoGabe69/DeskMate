@@ -4,7 +4,7 @@ from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
 import os
 from core.signal import SpriteSignal
-from utils.update_message import update_message
+#from utils.update_message import update_message
 
 # NOTE: prolly gonna make it a constant
 css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
@@ -53,7 +53,8 @@ class MenuWindow(QtWidgets.QMainWindow):
         grid.addWidget(self.sprite_button, 500, 0, QtGui.Qt.AlignmentFlag.AlignCenter)
         grid.addWidget(self.text_area)
         self.setStyleSheet(self.style_sheet)
-        self.update_available = update_message()
+        self.update_available = "Dummy update message"
+        #self.update_available = update_message()
         self.text = QtWidgets.QLabel(self.update_available)
         self.text.adjustSize()
         grid.addWidget(self.text, 1920, 0, QtGui.Qt.AlignmentFlag.AlignLeft)
