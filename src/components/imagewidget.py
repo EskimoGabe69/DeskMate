@@ -2,6 +2,16 @@ from PySide6 import QtWidgets, QtGui
 
 
 class ImageWidget(QtWidgets.QWidget):
+    """
+    Util class utilizes the pygame as a surface widgets to draw on.
+
+    Usecase:
+        self.setCentralWidget(ImageWidget(surface))
+
+    Attributes:
+        surface: which is the surface we wanna draw on, surface from the QT/Pyside library.
+    """
+
     def __init__(self, surface, parent=None) -> None:
         super().__init__(parent)
         self.surface = surface

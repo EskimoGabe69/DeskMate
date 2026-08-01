@@ -13,14 +13,11 @@ Mainly I wanted to learn QT(GUI Dev) and well deepen my knowledge in Pygame, but
 - [X] Basic function of an object going left and right
 - [X] Sprite changing when hitting the wall
 - [X] Automatic updater
-- [ ] GUI Menu
-- [ ] Updater in the GUI menu
-- [ ] Functional Sprite slicer
+- [X] GUI Menu
+- [X] Updater in the GUI menu
+- [X] Functional Sprite slicer
 - [ ] proper installer for ease of use
-
-## Small ideas 💡
-- [X] Regarding the logo I might add like taskbar elements to sorta simulate the taskbar itself.
-- [ ] Try fixing the sprite slicer(Yes it's there yes it isn't implemented yet xD but im working on it!)
+- [ ] Height picker for like Dock or Taskbar
 
 ## Installation 📥
 Linux🐧/Mac🍎 
@@ -32,3 +29,4 @@ source .venv/bin/activate
 
 uv pip install -r requirenments.txt
 ```
+[Other things I wanna do](./TODO.md)
