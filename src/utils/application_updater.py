@@ -41,9 +41,10 @@ class ApplicationUpdater:
             return True
         elif updated_choice_string.lower() == "n":
             return False
-
-    def update_message(self) -> str:
-        if self.update_available():
+    @staticmethod
+    def update_message() -> str:
+        instance = ApplicationUpdater()
+        if instance.update_available():
             return "Theres an Update available!\nFor Deskmate!"
         else:
             return ""
