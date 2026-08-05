@@ -5,7 +5,6 @@ from PySide6 import QtCore, QtWidgets, QtGui
 import os
 from core.signal import SpriteSignal
 from utils.application_updater import ApplicationUpdater
-#from utils.application_updater import update_message
 
 # NOTE: prolly gonna make it a constant
 css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")

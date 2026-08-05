@@ -1,21 +1,16 @@
+from utils.file_importer import file_importer
 from components.appmanager import AppManager
+from utils.yaml_dumper import yaml_dumper
+from utils.sprite import SpriteSheet
 from components.mate import Mate
 from core import constants
-import os
 import pygame
-
-from utils.sprite import SpriteSheet
 
 
 pygame.init()
-asset_directory = os.path.join(os.path.dirname(__file__), "..", "assets")
-# NOTE: In the rewrite those two under there are gonna go through a util function
-sprite_sheet_path = os.path.join(asset_directory, "sprite_sheet.png")
-icon_path = os.path.join(asset_directory, "deskmate_logo.svg")
-
-# TODO: Implement YAML logic and something with the area picker
-walk_animation = [(1, 1, 50, 50), (63, 1, 50, 50), (130, 1, 50, 50), (194, 3, 50, 50)]
-# something
+sprite_sheet_path = file_importer(constants.ASSET_DIR, "sprite_sheet.png")
+icon_path = file_importer(constants.ASSET_DIR, "deskmate_logo.svg")
+walk_animation = yaml_dumper()
 
 
 def app():
