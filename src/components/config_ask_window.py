@@ -1,7 +1,5 @@
 from PySide6 import QtWidgets, QtCore
-import os
-
-css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
+from core.constants import CSS_PATH
 
 
 class ConfigAskWindow(QtWidgets.QMainWindow):
@@ -20,8 +18,8 @@ class ConfigAskWindow(QtWidgets.QMainWindow):
         self.app = app
         self.text_area = QtWidgets.QTextEdit()
         self.text_area.setReadOnly(True)
-        self.text_area.setHtml("<h1>Test h1</h1><h2>Test h2</h2><p>Test p</p>")
-        self.css_file = QtCore.QFile(css_path)
+        self.text_area.setHtml("<h1>Config menu</h1>")
+        self.css_file = QtCore.QFile(CSS_PATH)
         self.css_file.open(QtCore.QFile.OpenModeFlag.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
         self.css_file.close()

@@ -23,3 +23,4 @@ TRANSPARENT = (255, 255, 255, 0)
 
 ASSET_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 YAML_LOC = os.path.join(os.path.dirname(__file__), "..", "..", "walk_animation.yaml")
+CSS_PATH = os.path.join(ASSET_DIR, "styles.css")

@@ -2,13 +2,8 @@ import shlex
 from components.sprite_area_picker import SpriteAreaPicker
 from core import constants
 from PySide6 import QtCore, QtWidgets, QtGui
-import os
 from core.signal import SpriteSignal
 from utils.application_updater import ApplicationUpdater
-
-# NOTE: prolly gonna make it a constant
-css_path = os.path.join(os.path.dirname(__file__), "..", "assets", "styles.css")
-
 
 class MenuWindow(QtWidgets.QMainWindow):
     """
@@ -29,7 +24,7 @@ class MenuWindow(QtWidgets.QMainWindow):
         self.text_area = QtWidgets.QPlainTextEdit()
         self.text_area.setReadOnly(True)
         self.setWindowFlags(QtCore.Qt.Window)
-        self.css_file = QtCore.QFile(css_path)
+        self.css_file = QtCore.QFile(constants.CSS_PATH)
         self.css_file.open(QtCore.QFile.OpenModeFlag.ReadOnly)
         self.style_sheet = str(self.css_file.readAll(), encoding="utf-8")
         self.css_file.close()

@@ -8,7 +8,7 @@ class SpriteAreaPicker(QtWidgets.QWidget):
     Utility class which allows the user to load an image and based on the mouse selection get the coordinations for the mate they might need
     (e.g x_coordination, y_coordination, width, height)
 
-    Still under construction.
+    Still under construction. Might test somewhere else tho
     """
 
     def __init__(self, parent=None) -> None:
